@@ -25,17 +25,19 @@ var giphyNumber = $(this).attr("giphyAtt");
 $("#item-" + giphyNumber).remove();
 });
 
+function checkTextField(field) {
+    if (field.value == '') {
+        alert("Field is empty");
+    }
+}
 
 // Function for displaying giphy data
 function renderButtons() {
-
   // Deleting the Giphys prior to adding new Giphys
   // (this is necessary otherwise you will have repeat buttons)
   $("#buttons-view").empty();
-
   // Looping through the array of Giphys
   for (var i = 0; i < Giphys.length; i++) {
-
     // Then dynamicaly generating buttons for each giphy in the array
     // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
     var a = $("<button>");
@@ -50,17 +52,32 @@ function renderButtons() {
   }
 }
 
+function required()
+{
+var empt = document.forms["giphyForm"]["giphyInput"].value;
+if (empt == "")
+{
+alert("Please input a Keyword");
+return false;
+}
+else
+{
+return true;
+}
+}
+
 // This function handles events where a giphy button is clicked
 $("#add-giphy").on("click", function(event) {
-  event.preventDefault();
-  // This line grabs the input from the textbox
-  var giphy = $("#giphy-input").val().trim();
 
-  // Adding giphy from the textbox to our array
-  Giphys.push(giphy);
+  if ( required() ) {
 
-  // Calling renderButtons which handles the processing of our giphy array
-  renderButtons();
+        event.preventDefault();
+        checkTextField("#giphy-input");
+        var giphy = $("#giphy-input").val().trim();
+        Giphys.push(giphy);
+        renderButtons();
+};
+
 });
 
 // Adding a click event listener to all elements with a class of "giphy"

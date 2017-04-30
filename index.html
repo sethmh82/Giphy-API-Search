@@ -3,27 +3,46 @@
 <head>
   <meta charset="utf-8">
   <title>Seth's Giphy Search</title>
-  <link href="giphy.css" rel="stylesheet">
 
+  <!-- MY STYLE -->
+  <link href="assets/css/giphy.css" rel="stylesheet">
 </head>
 <body>
 
-  <div class="container">
-    <h1>Giphy Search</h1>
+  <!-- TOP PAGE HEADER WITH GIPHY TITLE -->
+<div class="header">
+    <h1 class="part1">Giphy </h1><h1 class="part2"> Search</h1>
+</div>
 
-    <div id="buttons-view"></div>
+<br/>
 
-    <form id="giphy-form">
-      <label for="giphy-input">Seth's Giphy Image Search</label>
-      <input type="text" id="giphy-input"><br>
+  <!-- MAIN CONTAINER WITH INPUT FORM -->
+<div class="container">
+        <form name="giphyForm" id="giphy-form">
+            <input name="giphyInput" type="text" id="giphy-input" placeholder="Type Here...">
+            <br>
+            <input class="add-giphy-button" id="add-giphy" type="submit" value="Add a Giphy">
+        </form>
 
-      <input id="add-giphy" type="submit" value="Add a Giphy">
-    </form>
+       <!-- WHERE THE BUTTONS DISPLAY -->
+        <div id="buttons-view"></div>
 
-    <div id="giphy-view"></div>
-  </div>
-  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script src="giphy.js"></script>
+       <!-- WHERE THE GIPHYS DISPLAY -->
+        <div id="giphy-view"></div>
+</div>
+
+  <!-- MY LITTLE FOOTER THINGY -->
+  <div id="footer">
+      Coded by
+      <br />
+      <img style="padding:0px; margin:0px; border: 0px solid #FFF; height: 50px;" id="sig" src="assets/img/sethsig.png"/></div>
+
+  <!-- THE JQUERY LINK -->
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+  <!-- MY JAVASCRIPT -->
+<script src="assets/js/giphy.js"></script>
+
 </body>
 
 </html>
